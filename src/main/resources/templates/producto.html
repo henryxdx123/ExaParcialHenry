@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+    <head th:replace="plantilla/plantilla::head">
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="container" th:replace="plantilla/plantilla::menu"></div>
+        <div class="container" style="margin-top: 40px; margin: 0 auto; max-width: 500px">
+            <a href="/formProdu" class="text-info" style="text-decoration: none; font-weight: bold">Add</a>
+            <table class="table" style="max-width: 600px" >
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Producto</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Stock</th>                      
+                        <th scope="col">Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="producto:${productos}">
+                        <th scope="row" th:text="${producto.id}"></th>
+                        <td th:text="${producto.producto}"></td>
+                        <td th:text="${producto.precio}"></td>
+                        <td th:text="${producto.stock}"></td>                   
+                        <td>
+                            <a href="#" class="text-success" th:href="@{'/producedit/' + ${producto.id}}"><i class="far fa-edit"></i></a>
+                            <a href="#" class="text-danger" th:href="@{'/producdel/' + ${producto.id}}"><i class="fas fa-trash-alt"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="https://www.thymeleaf.org">
+    <head th:replace="plantilla/plantilla::head">
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="container" th:replace="plantilla/plantilla::menu"></div>
+        <div class="container" style="max-width: 400px; margin-top: 50px">
+            <div class="card">
+                <div class="card-header">
+                    Registrar
+                </div>
+                <div class="card-body">
+                    <form action="/producadd">
+                        <div class="mb-3">
+                            <input type="text" class="form-control m-25" placeholder="Producto" name="producto">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" name="precio" placeholder="Precio">        
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" name="stock" placeholder="Stock">        
+                        </div>
+                        <input type="submit" class="btn btn-primary" value="Guardar">
+                    </form>
+                </div>
+            </div>
+    </body>
+</html>
